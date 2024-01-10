@@ -23,6 +23,13 @@ export default class BearList extends LightningElement {
 	get hasResults() {
 		return (this.bears.data.length > 0);
 	}
+
+	handleOpenRecordClick() {
+		const selectEvent = new CustomEvent('bearview', {
+			detail: this.bear.Id
+		});
+		this.dispatchEvent(selectEvent);
+	}
 }
 // import { LightningElement } from 'lwc';
 // import ursusResources from '@salesforce/resourceUrl/ursus_park';
